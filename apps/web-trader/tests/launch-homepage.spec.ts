@@ -35,10 +35,13 @@ test("launch journeys explain costs and lead to working product pages", async ({
     await expect(plan.locator(".lp-price strong")).toHaveText("$0");
     await expect(plan.locator(".lp-share strong")).toHaveText("35%");
   }
-  await page.locator(".az-products-menu summary").click();
   await page
-    .locator(".az-products-menu")
-    .getByRole("link", { name: "Azuriya Brokerage" })
+    .getByRole("navigation", { name: "Main navigation", exact: true })
+    .getByRole("button", { name: "Business", exact: true })
+    .click();
+  await page
+    .locator("#az-menu-business")
+    .getByRole("link", { name: /Azuriya for your Brokerage/ })
     .click();
   await expect(page).toHaveURL(/\/brokerage$/);
   await page.goto("/");
@@ -74,16 +77,16 @@ test("launch homepage and navigation fit phone and tablet screens", async ({
       ),
     ).toBe(true);
     await page.getByRole("button", { name: "Open navigation" }).click();
-    await page
-      .locator("#mobile-navigation")
-      .getByRole("link", { name: "Products" })
+    const mobile = page.locator("#mobile-navigation");
+    await mobile
+      .locator("summary")
+      .filter({ hasText: /^Products$/ })
       .click();
-    await expect(page).toHaveURL(/#products$/);
-    await expect(
-      page
-        .locator("#products")
-        .getByRole("heading", { name: "What do you want to launch?" }),
-    ).toBeVisible();
+    await mobile.locator('a[href="/platform"]').click();
+    await expect(page).toHaveURL(/\/platform$/);
+    await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+      "A clearer view of your trading operation.",
+    );
     await expect(page.locator("#mobile-navigation")).toHaveCount(0);
   }
 });

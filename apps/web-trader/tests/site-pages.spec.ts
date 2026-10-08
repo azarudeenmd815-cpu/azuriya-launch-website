@@ -105,13 +105,22 @@ test("site directory filters, searches, handles empty results and opens pages", 
   await search.fill("copy trading");
   await directory.locator('.sp-directory-entry[href="/copy-trading"]').click();
   await expect(page).toHaveURL(/\/copy-trading$/);
+  const navigation = page.getByRole("navigation", {
+    name: "Main navigation",
+    exact: true,
+  });
+  await navigation
+    .getByRole("button", { name: "Traders", exact: true })
+    .click();
   await expect(
-    page
-      .getByRole("navigation", { name: "Main navigation" })
-      .getByRole("link", { name: "Copy trading", exact: true }),
+    navigation.getByRole("link", { name: /Copy Trading/ }),
   ).toHaveAttribute("aria-current", "page");
+  await page.keyboard.press("Escape");
   await expect(
-    page.getByRole("group", { name: /Copy engine workspace illustration/ }),
+    page.getByRole("figure", {
+      name: "Copy allocation: illustrative workflow",
+      exact: true,
+    }),
   ).toBeVisible();
 });
 
@@ -230,13 +239,13 @@ test("public reference layouts fit phones, tablets and desktops", async ({
           )
           .toBe(true);
         await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-        await expect(page.locator(".sp-page")).toHaveCSS(
+        await expect(page.locator(".az-marketing").first()).toHaveCSS(
           "background-color",
           theme === "dark" ? "rgb(0, 0, 0)" : "rgb(255, 255, 255)",
         );
         // Outer clipping must not hide a hero button expanding the grid.
         for (const button of await page
-          .locator(".sp-hero-actions .az-button")
+          .locator("main > section:first-of-type .az-button")
           .all()) {
           const bounds = await button.boundingBox();
           expect(bounds).not.toBeNull();
@@ -340,21 +349,24 @@ test("unknown routes show a useful 404 and directory navigation", async ({
   await expect(page).toHaveURL(/\/sitemap$/);
 });
 
-test("standalone product diagrams pause their flows and funding retains its MT5 related link", async ({
+test("flow diagrams retain pause controls, dedicated pages have their own illustrations and funding retains its MT5 link", async ({
   page,
 }) => {
-  for (const path of ["/liquidity", "/trading-platforms", "/admin-portal"]) {
+  for (const path of ["/liquidity", "/"]) {
     await page.goto(path);
     const tracks = page.locator("[data-flow-track]");
     expect(await tracks.count()).toBeGreaterThan(0);
     await page
       .getByRole("button", { name: "Pause all flow animations", exact: true })
+      .first()
       .click();
     await expect(
-      page.getByRole("button", {
-        name: "Resume all flow animations",
-        exact: true,
-      }),
+      page
+        .getByRole("button", {
+          name: "Resume all flow animations",
+          exact: true,
+        })
+        .first(),
     ).toHaveAttribute("aria-pressed", "true");
     await expect
       .poll(() =>
@@ -368,6 +380,7 @@ test("standalone product diagrams pause their flows and funding retains its MT5 
       .toBe(true);
     await page
       .getByRole("button", { name: "Resume all flow animations", exact: true })
+      .first()
       .click();
     await expect
       .poll(() =>
@@ -379,6 +392,14 @@ test("standalone product diagrams pause their flows and funding retains its MT5 
         ),
       )
       .toBe(true);
+  }
+  for (const [path, name] of [
+    ["/trading-platforms", "Platform connections: illustrative workflow"],
+    ["/admin-portal", "BACK OFFICE: illustrative workflow"],
+  ]) {
+    await page.goto(path);
+    await expect(page.getByRole("figure", { name, exact: true })).toBeVisible();
+    await expect(page.locator(".sp-experience")).toHaveCount(0);
   }
   await page.goto("/funding");
   await page

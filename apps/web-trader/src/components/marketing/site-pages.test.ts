@@ -4,6 +4,14 @@ import type { SitePage } from "./site-types";
 
 const expectedPaths = [
   "/platform",
+  "/azuriya-core",
+  "/automation",
+  "/broker-pricing",
+  "/prop-pricing",
+  "/resources/brokerage-launch-blueprint",
+  "/resources/prop-firm-launch-blueprint",
+  "/technical-integration",
+  "/business-hub",
   "/brokerage",
   "/prop-firm",
   "/copy-trading",
@@ -132,6 +140,7 @@ describe("visitor site registry", () => {
       "/",
       "/mt5-deposits",
       "/terminal",
+      "/dashboard-preview",
       ...sitePages.map(({ path }) => path),
     ]);
 

@@ -4,6 +4,7 @@ import { legalPages } from "./site-legal-data";
 import { articlePages, insightsPage } from "./site-articles";
 import type { SitePage } from "./site-types";
 import { ecosystemPage } from "./ecosystem-page-data";
+import { destinationDefinitions } from "./destination-data";
 
 const directoryPage: SitePage = {
   path: "/sitemap",
@@ -41,7 +42,13 @@ const directoryPage: SitePage = {
 
 export const sitePages: SitePage[] = [
   ecosystemPage,
-  ...productPages,
+  ...productPages.filter(
+    (page) =>
+      !destinationDefinitions.some(
+        (destination) => destination.page.path === page.path,
+      ),
+  ),
+  ...destinationDefinitions.map((destination) => destination.page),
   ...resourcePages,
   ...legalPages,
   insightsPage,
@@ -59,7 +66,8 @@ export type SiteCategory =
   | "Legal";
 export function getSiteCategory(page: SitePage): SiteCategory {
   if (page.kind === "legal") return "Legal";
-  if (page.path.startsWith("/solutions")) return "Solutions";
+  if (page.kind === "solution" || page.path.startsWith("/solutions"))
+    return "Solutions";
   if (
     page.kind === "article" ||
     page.path === "/resources" ||

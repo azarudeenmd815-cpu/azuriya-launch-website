@@ -1,77 +1,217 @@
-.az-desktop-nav {
+.az-marketing .az-header-inner {
+  position: relative;
+  gap: 22px;
+}
+.az-marketing .az-desktop-nav {
   align-items: center;
-  gap: 23px;
+  gap: 24px;
   margin-left: 0;
   white-space: nowrap;
 }
-.az-marketing.az-ecosystem-page .az-brand-mark,
-.az-marketing.az-pricing-page .az-brand-mark {
-  width: 40px;
-  height: 40px;
-  flex: 0 0 40px;
+.az-nav-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--az-muted);
+  font-size: 13px;
+  cursor: pointer;
+}
+.az-nav-trigger:hover,
+.az-nav-trigger[aria-expanded="true"] {
+  color: var(--az-text);
+}
+.az-nav-trigger svg {
+  transition: transform 0.18s;
+}
+.az-nav-trigger[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+  color: var(--az-blue);
+}
+.az-marketing .az-header-actions {
+  gap: 12px;
+}
+.az-mega-menu {
+  position: absolute;
+  top: calc(100% - 1px);
+  z-index: 21;
+  background: var(--az-surface);
+  border: 1px solid var(--az-line);
+  border-radius: 18px;
+  padding: 28px;
+  box-shadow: 0 24px 60px #0003;
+  animation: az-menu-reveal 0.16s ease-out;
+  white-space: normal;
+  max-height: calc(100dvh - 100px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.az-mega-products,
+.az-mega-traders {
+  width: 600px;
+  left: 180px;
+}
+.az-mega-traders {
+  left: 260px;
+}
+.az-mega-business {
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: 24px;
+}
+.az-mega-business .az-mega-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.az-menu-group-label {
+  margin: 0 0 16px !important;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  color: var(--az-blue);
+}
+.az-mega-business .az-menu-group:nth-child(2) .az-menu-group-label {
+  color: var(--az-text);
+}
+.az-mega-business .az-menu-group:nth-child(3) .az-menu-group-label {
+  color: var(--az-muted);
+}
+.az-marketing .az-menu-destination {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 17px;
+  align-items: center;
+  gap: 18px;
+  min-height: 98px;
+  padding: 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition:
+    background 0.16s,
+    color 0.16s;
+  color: var(--az-text);
+}
+.az-menu-destination:hover {
+  background: var(--az-raised);
+}
+.az-menu-destination[aria-current="page"] {
+  background: color-mix(in srgb, var(--az-blue) 9%, transparent);
+}
+.az-menu-icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid color-mix(in srgb, var(--az-blue) 40%, transparent);
+  border-radius: 14px;
+  color: var(--az-blue);
+  background: color-mix(in srgb, var(--az-blue) 6%, transparent);
+}
+.az-menu-destination strong {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.25;
+}
+.az-menu-destination small {
+  display: block;
+  margin-top: 7px;
+  color: var(--az-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 400;
+}
+.az-menu-link-arrow {
+  color: var(--az-muted);
+  opacity: 0;
+  transition: opacity 0.16s;
+}
+.az-menu-destination:hover .az-menu-link-arrow,
+.az-menu-destination:focus-visible .az-menu-link-arrow {
+  opacity: 1;
+}
+.az-mega-business .az-menu-destination {
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px 8px;
+  min-height: 102px;
+}
+.az-mega-business .az-menu-icon {
+  width: 24px;
+  height: 30px;
+  border: 0;
+  background: transparent;
+  border-radius: 0;
+}
+.az-mega-business .az-menu-destination strong {
+  font-size: 15px;
+  line-height: 1.35;
+}
+.az-mega-business .az-menu-destination small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+.az-mega-business .az-menu-link-arrow {
+  display: none;
+}
+.az-menu-contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: var(--az-raised);
+  border: 1px solid var(--az-line);
+  border-radius: 14px;
+  padding: 20px;
+}
+.az-menu-contact-art {
+  display: grid;
+  place-items: center;
+  min-height: 116px;
+  width: 100%;
+  color: var(--az-blue);
+}
+.az-menu-contact-art > svg {
+  filter: drop-shadow(0 7px 15px #3869fc33);
+}
+.az-menu-contact-art > span {
+  margin: 8px 0 20px;
+}
+.az-menu-contact-art .az-brand {
+  font-size: 19px;
+}
+.az-menu-contact-art .az-brand-mark {
+  width: 24px;
+  height: 24px;
   transform: none;
   background: url("/brand/azuriya-mark-blue.png") center / contain no-repeat;
 }
-.az-marketing.az-ecosystem-page .az-brand-mark svg,
-.az-marketing.az-pricing-page .az-brand-mark svg {
+.az-menu-contact-art .az-brand-mark svg {
   display: none;
 }
-@media (max-width: 374px) {
-  .az-marketing.az-ecosystem-page .az-header-inner,
-  .az-marketing.az-pricing-page .az-header-inner {
-    gap: 4px;
-  }
-  .az-marketing.az-ecosystem-page .az-header .az-brand-mark,
-  .az-marketing.az-pricing-page .az-header .az-brand-mark {
-    width: 28px;
-    height: 28px;
-    flex-basis: 28px;
-  }
+.az-menu-contact > strong {
+  color: var(--az-text);
+  font-size: 17px;
+  font-weight: 550;
 }
-.az-products-menu {
-  position: relative;
-}
-.az-products-menu summary {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  list-style: none;
-  cursor: pointer;
-  font-size: 13px;
-  padding-block: 20px;
-}
-.az-products-menu summary::after {
-  content: "⌄";
-}
-.az-products-menu summary::-webkit-details-marker {
-  display: none;
-}
-.az-products-menu > div {
-  position: absolute;
-  top: 100%;
-  left: -20px;
-  width: 300px;
-  padding: 12px;
-  background: var(--az-surface, #141414);
-  border: 1px solid var(--az-line, #30343d);
-  border-radius: 12px;
-  box-shadow: 0 20px 40px #0004;
-}
-.az-products-menu > div a {
-  display: block;
-  padding: 14px;
-  border-radius: 8px;
-}
-.az-products-menu > div a:hover {
-  background: #416aff15;
-}
-.az-products-menu small {
-  display: block;
-  margin-top: 7px;
-  color: var(--az-muted, #8e97a8);
+.az-menu-contact > p {
+  color: var(--az-muted);
   font-size: 12px;
-  white-space: normal;
+  margin: 8px 0 18px;
   line-height: 1.5;
+}
+.az-marketing .az-menu-contact .az-button {
+  width: 100%;
+  min-height: 44px;
+  font-size: 12px;
+  padding: 10px 12px;
+  margin-top: auto;
 }
 .az-header .az-launch-nav {
   display: inline-flex;
@@ -84,21 +224,132 @@
   font-size: 12px;
   white-space: nowrap;
 }
-@media (max-width: 1300px) {
+.az-desktop-nav a[aria-current="page"],
+.az-mobile-nav a[aria-current="page"] {
+  color: var(--az-blue);
+  font-weight: 600;
+}
+.az-marketing.az-destination-page .az-brand-mark,
+.az-marketing.az-pricing-overview .az-brand-mark,
+.az-marketing.az-ecosystem-page .az-brand-mark,
+.az-marketing.az-pricing-page .az-brand-mark {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 40px;
+  transform: none;
+  background: url("/brand/azuriya-mark-blue.png") center / contain no-repeat;
+}
+.az-marketing.az-destination-page .az-brand-mark svg,
+.az-marketing.az-pricing-overview .az-brand-mark svg,
+.az-marketing.az-ecosystem-page .az-brand-mark svg,
+.az-marketing.az-pricing-page .az-brand-mark svg {
+  display: none;
+}
+@keyframes az-menu-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@media (max-width: 1399px) {
   .az-header .az-launch-nav {
     display: none;
   }
 }
 @media (max-width: 1199px) {
+  .az-marketing .az-header .az-desktop-nav {
+    display: none;
+  }
+  .az-marketing .az-header .az-menu-toggle {
+    display: grid;
+    place-items: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+  }
   .az-marketing .az-header .az-mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 79px;
+    width: 100%;
+    padding: 14px 28px 22px;
+    background: var(--az-surface);
+    color: var(--az-text);
+    border-bottom: 1px solid var(--az-line);
     max-height: calc(100dvh - 80px);
     overflow-y: auto;
     overscroll-behavior-y: contain;
+    box-shadow: 0 18px 30px #0002;
+  }
+  .az-mobile-group {
+    border-bottom: 1px solid var(--az-line);
+  }
+  .az-mobile-group summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 54px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 550;
+  }
+  .az-mobile-group summary::-webkit-details-marker {
+    display: none;
+  }
+  .az-mobile-group[open] > summary svg {
+    transform: rotate(180deg);
+  }
+  .az-mobile-subgroup {
+    padding: 12px 0;
+  }
+  .az-marketing .az-mobile-nav .az-menu-destination {
+    min-height: 76px;
+    padding: 12px 6px;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+    font-size: 14px;
+  }
+  .az-mobile-nav .az-menu-destination .az-menu-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+  }
+  .az-mobile-nav .az-menu-destination strong {
+    font-size: 15px;
+  }
+  .az-mobile-nav .az-menu-destination small {
+    font-size: 12px;
+  }
+  .az-mobile-nav .az-menu-link-arrow {
+    display: none;
+  }
+  .az-marketing .az-mobile-nav > a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    padding: 12px 0;
+    color: var(--az-text);
+    font-size: 14px;
+  }
+  .az-menu-group-label {
+    margin-bottom: 6px !important;
+  }
+  .az-mobile-contact {
+    color: var(--az-blue) !important;
   }
 }
 @media (max-width: 767px) {
   .az-marketing .az-header .az-mobile-nav {
+    top: 71px;
     max-height: calc(100dvh - 72px);
+    padding-inline: 20px;
   }
 }
 @media (max-width: 479px) {
@@ -114,52 +365,23 @@
   }
   .az-marketing .az-header .az-brand-mark,
   .az-marketing .az-header .az-brand-mark svg {
-    width: 24px;
-    height: 24px;
+    width: 26px;
+    height: 26px;
+    flex-basis: 26px;
   }
   .az-marketing .az-header .az-button-small {
     font-size: 11px;
     padding-inline: 9px;
     min-height: 44px;
   }
-  .az-marketing .az-header .az-button-small > svg {
-    display: none;
-  }
 }
-.az-desktop-nav a[aria-current="page"],
-.az-mobile-nav a[aria-current="page"] {
-  color: #2859c5;
-  font-weight: 600;
-}
-@media (min-width: 1024px) and (max-width: 1199px) {
-  .az-header .az-desktop-nav {
-    display: none;
+@media (prefers-reduced-motion: reduce) {
+  .az-mega-menu {
+    animation: none;
   }
-  .az-header .az-menu-toggle {
-    display: grid;
-    place-items: center;
-    min-width: 44px;
-    min-height: 44px;
-    padding: 0;
-  }
-  .az-header .az-mobile-nav {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 79px;
-    width: 100%;
-    padding: 12px 28px 22px;
-    background: #ffffff;
-    border-bottom: 1px solid #dce3ee;
-    box-shadow: 0 12px 24px #294f810d;
-  }
-  .az-header .az-mobile-nav a {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    min-height: 48px;
-    padding: 10px 4px;
-    color: #42526b;
-    font-size: 14px;
+  .az-nav-trigger svg,
+  .az-menu-destination,
+  .az-menu-link-arrow {
+    transition: none;
   }
 }

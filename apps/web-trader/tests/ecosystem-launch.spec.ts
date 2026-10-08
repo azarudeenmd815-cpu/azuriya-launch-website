@@ -50,13 +50,14 @@ test("ecosystem directory searches, filters, expands categories and handles no m
   expect(errors).toEqual([]);
 });
 
-test("pricing cards tally the platform and CRM reference beside the zero subscription and revenue share", async ({
+test("homepage pricing cards retain the detailed platform and CRM tally beside the zero subscription and revenue share", async ({
   page,
 }) => {
-  await page.goto("/pricing");
-  await expect(page.getByRole("heading", { level: 1 })).toContainText(
-    "$0 per month.",
-  );
+  await page.goto("/#launch-pricing");
+  const pricing = page.locator("#launch-pricing");
+  await expect(
+    pricing.getByRole("heading", { level: 2 }).first(),
+  ).toContainText("$0 per month.");
   await expect(page.locator(".lp-plan")).toHaveCount(3);
   const references = [
     ["€1,490", "€2,000", "€3,490"],
@@ -67,6 +68,7 @@ test("pricing cards tally the platform and CRM reference beside the zero subscri
   for (const plan of await page.locator(".lp-plan").all()) {
     await expect(plan.locator(".lp-price strong")).toHaveText("$0");
     await expect(plan.locator(".lp-share strong")).toHaveText("35%");
+    await expect(plan.locator(".lp-feature-group dt")).toHaveCount(32);
     const reference = plan.locator(".lp-price-reference");
     await expect(reference.locator("dt")).toHaveText([
       "Trading platform",
@@ -123,6 +125,75 @@ test("pricing cards tally the platform and CRM reference beside the zero subscri
   await expect(page.locator("#launch-offer")).toContainText(
     "35% share of eligible business revenue",
   );
+});
+
+test("broker pricing presents its own commercial scope and published subscription reference", async ({
+  page,
+}) => {
+  await page.goto("/broker-pricing");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "Your brokerage. One clear commercial package.",
+  );
+  await expect(page.locator(".dp-commercial-price strong")).toHaveText("$0");
+  await expect(page.locator(".dp-commercial-price")).toContainText("per month");
+  await expect(page.locator(".dp-share-term strong")).toHaveText("35%");
+  await expect(page.locator(".dp-slot-note")).toContainText("97 / 100");
+  await expect(page.locator(".dp-slot-note")).toContainText("3 remaining");
+  const references = page.locator(".dp-reference-grid article");
+  await expect(references).toHaveCount(2);
+  await expect(references.nth(0).locator("dd")).toHaveText([
+    "€1,490",
+    "+ €2,000",
+    "€3,490",
+  ]);
+  await expect(references.nth(1).locator("dd")).toHaveText([
+    "€2,990",
+    "+ €3,490",
+    "€6,480",
+  ]);
+  await expect(page.locator(".dp-price-reference")).toContainText(
+    "not former Azuriya prices",
+  );
+  await expect(page.locator(".lp-plan, .sp-experience")).toHaveCount(0);
+  await page.getByRole("link", { name: "Read the offer terms" }).click();
+  await expect(page).toHaveURL(/\/legal\/terms#launch-offer$/);
+  await expect(page.locator("#launch-offer")).toContainText(
+    "35% share of eligible business revenue",
+  );
+});
+
+test("pricing overview opens separate brokerage and prop package pages", async ({
+  page,
+}) => {
+  const errors: string[] = [];
+  page.on("pageerror", (error) => errors.push(error.message));
+  await page.goto("/pricing");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "One package. Two paths to launch.",
+    { useInnerText: true },
+  );
+  await expect(page.locator(".po-price strong")).toHaveText("$0");
+  await expect(page.locator(".po-revenue strong")).toHaveText("35%");
+  await expect(page.locator(".po-allocation progress")).toHaveAttribute(
+    "value",
+    "97",
+  );
+  await expect(page.locator(".po-allocation")).toContainText(
+    "3 slots remaining",
+  );
+  await expect(page.locator(".po-audience-card")).toHaveCount(2);
+  await expect(
+    page.locator('.po-audience-card a[href="/broker-pricing"]'),
+  ).toBeVisible();
+  await expect(
+    page.locator('.po-audience-card a[href="/prop-pricing"]'),
+  ).toBeVisible();
+  await expect(page.locator(".lp-plan, .sp-experience")).toHaveCount(0);
+  await page.locator('.po-audience-card a[href="/prop-pricing"]').click();
+  await expect(page).toHaveURL(/\/prop-pricing$/);
+  await expect(page.locator(".dp-commercial-price strong")).toHaveText("$0");
+  await expect(page.locator(".dp-share-term strong")).toHaveText("35%");
+  expect(errors).toEqual([]);
 });
 
 test("new sections and directory fit phones, tablets and desktops in both themes", async ({

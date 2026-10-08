@@ -6,6 +6,8 @@ import { getSitePageMetadata } from "../../lib/site-page-metadata";
 import { PageExperience } from "../../components/marketing/site-page-experience";
 import { getPageStructuredData } from "../../lib/site-structured-data";
 import { StructuredData } from "../../components/marketing/structured-data";
+import { getDestination } from "../../components/marketing/destination-data";
+import { DestinationPage } from "../../components/marketing/destination-page";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -30,13 +32,18 @@ export default async function ContentPage({ params }: PageProps) {
   const { slug } = await params;
   const page = getSitePage(`/${slug.join("/")}`);
   if (!page) notFound();
+  const destination = getDestination(page.path);
   return (
     <>
       <StructuredData data={getPageStructuredData(page)} />
-      <SitePageTemplate
-        page={page}
-        experience={<PageExperience path={page.path} />}
-      />
+      {destination ? (
+        <DestinationPage destination={destination} />
+      ) : (
+        <SitePageTemplate
+          page={page}
+          experience={<PageExperience path={page.path} />}
+        />
+      )}
     </>
   );
 }

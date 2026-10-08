@@ -1,4 +1,4 @@
-import rawCatalog from "./ecosystem-catalog.json";
+import rawCatalog from "./ecosystem-catalog.json" with { type: "json" };
 
 export const ecosystemCategories = [
   {
