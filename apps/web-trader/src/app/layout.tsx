@@ -57,7 +57,7 @@ export default function RootLayout({
       <body>
         <MarketingThemeSync />
         <Providers>{children}</Providers>
-      </body>
+      <script defer src="/_vercel/insights/script.js"></script></body>
     </html>
   );
 }
