@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 import { sitePages } from "../src/components/marketing/site-pages";
 
 test("every new page renders its own content, metadata and shared footer", async ({

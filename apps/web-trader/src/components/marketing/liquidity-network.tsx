@@ -1,12 +1,11 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { ArrowUpRight, Triangle } from "@phosphor-icons/react/dist/ssr";
 import {
-  ArrowUpRight,
   GlobeHemisphereWest,
   PlugsConnected,
   ShieldCheck,
-  Triangle,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
 import "./liquidity-network.css";
 import "./liquidity-logos.css";
 import { FlowTracks } from "./flow-tracks";

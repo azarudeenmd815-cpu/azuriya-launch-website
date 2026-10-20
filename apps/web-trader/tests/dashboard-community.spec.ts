@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("community threads, pins and reactions update the selected conversation", async ({
   page,

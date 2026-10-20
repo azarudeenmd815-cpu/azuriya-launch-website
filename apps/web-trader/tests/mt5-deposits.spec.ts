@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("the landing page introduces direct MT5 deposits and opens the dedicated page", async ({
   page,

@@ -1,9 +1,6 @@
 import Image from "next/image";
-import {
-  ArrowUpRight,
-  PlugsConnected,
-  UsersThree,
-} from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { PlugsConnected, UsersThree } from "./three-d-icon";
 
 export function HeroGraphic() {
   return (

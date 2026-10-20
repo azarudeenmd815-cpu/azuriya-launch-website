@@ -9,19 +9,21 @@ import {
   CaretDown,
   Check,
   CheckCircle,
-  Cloud,
+  Images,
+  MapPin,
+  Triangle,
+} from "@phosphor-icons/react";
+import {
+  Globe as Cloud,
   CurrencyDollar,
   Database,
   GlobeHemisphereWest,
-  Images,
-  MapPin,
   PlugsConnected,
   ShieldCheck,
   SlidersHorizontal,
   Stack,
-  TreeStructure,
-  Triangle,
-} from "@phosphor-icons/react";
+  GitBranch as TreeStructure,
+} from "./three-d-icon";
 import {
   calculateRevenueExample,
   formatExampleUsd,

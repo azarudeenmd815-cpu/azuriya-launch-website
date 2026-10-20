@@ -1,10 +1,6 @@
 import Image from "next/image";
-import {
-  ArrowUpRight,
-  CheckCircle,
-  LockKey,
-  ShieldCheck,
-} from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
+import { LockKey, ShieldCheck } from "./three-d-icon";
 import "./product-detail-graphics.css";
 
 export function AccountSnapshot() {

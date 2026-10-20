@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 import { randomUUID } from "node:crypto";
 test("authenticated simulated trading, protection, partial close, pending order and audit", async ({
   page,

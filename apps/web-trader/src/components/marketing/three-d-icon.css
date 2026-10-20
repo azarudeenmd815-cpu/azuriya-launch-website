@@ -1,0 +1,123 @@
+.az-icon-3d {
+  display: inline-block;
+  flex-shrink: 0;
+  vertical-align: middle;
+  background-image: url("/marketing/icons-3d/azuriya-icon-atlas.webp");
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  contain: paint;
+  pointer-events: none;
+}
+
+/* Decorative product artwork gets room to read; interface controls keep their native glyphs. */
+.az-marketing .az-menu-icon {
+  border: 0;
+  background: transparent;
+}
+.az-marketing .az-menu-icon > .az-icon-3d {
+  width: 52px !important;
+  height: 52px !important;
+}
+.az-marketing .az-mega-business .az-menu-destination {
+  grid-template-columns: 42px minmax(0, 1fr);
+}
+.az-marketing .az-mega-business .az-menu-icon {
+  width: 42px;
+  height: 42px;
+}
+.az-marketing .az-mega-business .az-menu-icon > .az-icon-3d {
+  width: 42px !important;
+  height: 42px !important;
+}
+.az-marketing .az-menu-contact-art > .az-icon-3d {
+  width: 104px !important;
+  height: 104px !important;
+  margin: 0;
+}
+.az-marketing
+  :is(
+    .lp-plan-icon,
+    .po-icon,
+    .dp-capability-icon,
+    .launch-product-icon,
+    .lv-automation-icon
+  ) {
+  background: transparent;
+  border: 0;
+}
+.az-marketing
+  :is(
+    .lp-plan-icon,
+    .po-icon,
+    .dp-capability-icon,
+    .launch-product-icon,
+    .lv-automation-icon
+  )
+  > .az-icon-3d {
+  width: 54px !important;
+  height: 54px !important;
+}
+.az-marketing .lv-module-icon {
+  background: transparent;
+  border: 0;
+}
+.az-marketing .lv-module-icon > .az-icon-3d {
+  width: 36px !important;
+  height: 36px !important;
+}
+.az-marketing .lv-hub-mark > .az-icon-3d {
+  width: 76px !important;
+  height: 76px !important;
+}
+.az-marketing .az-eyebrow > .az-icon-3d {
+  width: 22px !important;
+  height: 22px !important;
+}
+.az-marketing .dp-broker-account > .az-icon-3d {
+  width: 70px !important;
+  height: 70px !important;
+}
+.az-marketing .dp-graphic-bar .az-icon-3d {
+  width: 25px !important;
+  height: 25px !important;
+}
+.az-marketing :is(.dp-rule-review, .dp-broker-route) > .az-icon-3d {
+  flex-shrink: 0;
+}
+.az-marketing :is(.az-feature-copy, .az-accounts-feature) > .az-icon-3d {
+  margin-bottom: 15px;
+}
+.az-marketing .og-admin-hub > .az-icon-3d:last-child {
+  margin-left: 14px;
+}
+.az-marketing .ig-editorial li > .az-icon-3d {
+  margin-top: 2px;
+}
+.az-marketing .lop-art > .az-icon-3d {
+  z-index: 1;
+}
+@media (max-width: 1199px) {
+  .az-marketing .az-header .az-mobile-nav .az-menu-destination {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+  .az-marketing .az-header .az-mobile-nav .az-menu-icon {
+    width: 44px;
+    height: 44px;
+  }
+  .az-marketing .az-header .az-mobile-nav .az-menu-icon > .az-icon-3d {
+    width: 44px !important;
+    height: 44px !important;
+  }
+}
+@media (max-width: 700px) {
+  .az-marketing .lop-art > .az-icon-3d {
+    width: 132px !important;
+    height: 132px !important;
+  }
+}
+@media (max-width: 360px) {
+  .az-marketing .lop-art > .az-icon-3d {
+    width: 105px !important;
+    height: 105px !important;
+  }
+}

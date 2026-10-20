@@ -1,12 +1,11 @@
-import Link from "next/link";
 import {
-  ArrowUpRight,
-  Check,
   ChartLineUp,
   PlugsConnected,
   ShieldCheck,
   Sparkle,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
+import Link from "next/link";
+import { ArrowUpRight, Check } from "@phosphor-icons/react/dist/ssr";
 import {
   formatOfferMoney,
   launchOffer,
@@ -17,7 +16,7 @@ import {
 import "./launch-pricing.css";
 
 export function LaunchAllocation({ compact = false }: { compact?: boolean }) {
-  const remaining = launchOffer.totalSlots - launchOffer.allocatedSlots;
+  const remaining = launchOffer.remainingSlots;
   return (
     <div className={`lp-allocation${compact ? " lp-allocation-compact" : ""}`}>
       <div className="lp-allocation-copy">
@@ -30,15 +29,15 @@ export function LaunchAllocation({ compact = false }: { compact?: boolean }) {
       <div className="lp-allocation-meter">
         <div>
           <strong>
-            {launchOffer.allocatedSlots}
+            {launchOffer.remainingSlots}
             <span> / {launchOffer.totalSlots}</span>
           </strong>
-          <small>slots allocated</small>
+          <small>slots remaining</small>
         </div>
         <progress
-          value={launchOffer.allocatedSlots}
+          value={launchOffer.remainingSlots}
           max={launchOffer.totalSlots}
-          aria-label={`${launchOffer.allocatedSlots} of ${launchOffer.totalSlots} launch slots allocated`}
+          aria-label={`${launchOffer.remainingSlots} of ${launchOffer.totalSlots} launch slots remaining`}
         />
       </div>
       {!compact && (
@@ -353,8 +352,9 @@ export function LaunchPricing({ fullPage = false }: { fullPage?: boolean }) {
             </li>
             <li>
               The 100-slot release is subject to eligibility, commercial
-              agreement and deployment readiness. The current allocation is 97
-              of 100; discussing a launch does not reserve a slot.
+              agreement and deployment readiness. There are{" "}
+              {launchOffer.remainingSlots} of {launchOffer.totalSlots} slots
+              remaining; discussing a launch does not reserve a slot.
             </li>
             <li>
               Live services require the relevant provider arrangements and

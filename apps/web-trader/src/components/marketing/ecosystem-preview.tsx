@@ -1,9 +1,6 @@
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  Lightning,
-  PlugsConnected,
-} from "@phosphor-icons/react/dist/ssr";
+import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { Lightning, PlugsConnected } from "./three-d-icon";
 import {
   ecosystemCategories,
   ecosystemCategoryCounts,

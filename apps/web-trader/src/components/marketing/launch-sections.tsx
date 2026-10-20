@@ -1,9 +1,8 @@
 import Link from "next/link";
+import { ArrowUpRight, Check } from "@phosphor-icons/react/dist/ssr";
 import {
-  ArrowUpRight,
   ArrowsLeftRight,
   ChartLineUp,
-  Check,
   Code,
   FlagCheckered,
   GearSix,
@@ -14,7 +13,7 @@ import {
   Trophy,
   Users,
   Wallet,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
 import "./launch-sections.css";
 import { BuildComparisonGraphic, CoreEcosystemGraphic } from "./launch-visuals";
 

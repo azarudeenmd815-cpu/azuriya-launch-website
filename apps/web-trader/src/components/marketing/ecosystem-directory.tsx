@@ -2,12 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import {
-  ArrowUpRight,
-  MagnifyingGlass,
-  PlugsConnected,
-  X,
-} from "@phosphor-icons/react";
+import { ArrowUpRight, MagnifyingGlass, X } from "@phosphor-icons/react";
+import { PlugsConnected } from "./three-d-icon";
 import {
   ecosystemCategories,
   ecosystemCategoryCounts,

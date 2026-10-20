@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 import { readFileSync } from "node:fs";
 
 const ecosystemCount = JSON.parse(
@@ -114,7 +114,7 @@ test("homepage pricing cards retain the detailed platform and CRM tally beside t
     "97",
   );
   await expect(page.locator(".lp-allocation-copy")).toContainText(
-    "3 slots remaining",
+    "97 slots remaining",
   );
   await expect(page.locator(".lp-reference-note")).toContainText(
     "comparison prices, not previous Azuriya charges",
@@ -138,7 +138,9 @@ test("broker pricing presents its own commercial scope and published subscriptio
   await expect(page.locator(".dp-commercial-price")).toContainText("per month");
   await expect(page.locator(".dp-share-term strong")).toHaveText("35%");
   await expect(page.locator(".dp-slot-note")).toContainText("97 / 100");
-  await expect(page.locator(".dp-slot-note")).toContainText("3 remaining");
+  await expect(page.locator(".dp-slot-note")).toContainText(
+    "launch slots remaining",
+  );
   const references = page.locator(".dp-reference-grid article");
   await expect(references).toHaveCount(2);
   await expect(references.nth(0).locator("dd")).toHaveText([
@@ -179,7 +181,7 @@ test("pricing overview opens separate brokerage and prop package pages", async (
     "97",
   );
   await expect(page.locator(".po-allocation")).toContainText(
-    "3 slots remaining",
+    "97 slots remaining",
   );
   await expect(page.locator(".po-audience-card")).toHaveCount(2);
   await expect(

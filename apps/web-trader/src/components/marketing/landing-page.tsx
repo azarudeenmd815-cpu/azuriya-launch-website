@@ -2,20 +2,22 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
-  ChartLineUp,
   Check,
   CheckCircle,
+  Plus,
+} from "@phosphor-icons/react/dist/ssr";
+import {
+  ChartLineUp,
   Copy,
   DiamondsFour,
   GlobeHemisphereWest,
   LockKey,
-  Plus,
   ShieldCheck,
   SlidersHorizontal,
   SquaresFour,
   UsersThree,
   Wallet,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
 import { MarketingNavigation } from "./navigation";
 import { SiteFooter } from "./site-footer";
 import { DashboardLaptopMock } from "./dashboard";

@@ -1,11 +1,8 @@
 "use client";
 
 import { useId, useState, useSyncExternalStore } from "react";
-import {
-  EqualsIcon,
-  PlusIcon,
-  SlidersHorizontalIcon,
-} from "@phosphor-icons/react";
+import { EqualsIcon, PlusIcon } from "@phosphor-icons/react";
+import { SlidersHorizontal as SlidersHorizontalIcon } from "./three-d-icon";
 import {
   calculateRevenueExample,
   EXAMPLE_MARKUP_OPTIONS,

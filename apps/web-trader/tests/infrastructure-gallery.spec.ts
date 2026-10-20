@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("native infrastructure views update zones, routing and exact commission examples", async ({
   page,

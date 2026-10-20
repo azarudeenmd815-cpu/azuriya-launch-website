@@ -1,10 +1,8 @@
 import {
-  ArrowRight,
   ArrowsSplit,
   Bank,
   ChartLineUp,
   ChatCircleDots,
-  Check,
   Code,
   Cube,
   Database,
@@ -18,7 +16,8 @@ import {
   Trophy,
   UsersThree,
   Wallet,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
+import { ArrowRight, Check } from "@phosphor-icons/react/dist/ssr";
 import type { DestinationVisual } from "./destination-types";
 
 const profiles = {

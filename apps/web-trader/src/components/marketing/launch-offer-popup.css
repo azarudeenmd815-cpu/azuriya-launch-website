@@ -1,0 +1,335 @@
+.az-marketing .lop-trigger {
+  position: fixed;
+  z-index: 22;
+  right: max(24px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 8px 10px 8px 18px;
+  border: 1px solid color-mix(in srgb, var(--az-blue) 30%, var(--az-line));
+  border-radius: 999px;
+  background: var(--az-surface);
+  color: var(--az-text);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 6px 24px #00000014;
+  transition:
+    border-color 160ms,
+    transform 160ms;
+}
+.az-marketing .lop-trigger:hover {
+  border-color: var(--az-blue);
+  transform: translateY(-2px);
+}
+.az-marketing .lop-trigger strong {
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #3869fc;
+  color: #ffffff;
+  font-size: 11px;
+  white-space: nowrap;
+}
+.lop-trigger-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3869fc;
+  box-shadow: 0 0 0 4px #3869fc16;
+}
+.az-marketing .lop-dialog {
+  width: min(850px, calc(100% - 48px));
+  max-height: calc(100dvh - 48px);
+  padding: 0;
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  border: 1px solid var(--az-line);
+  border-radius: 28px;
+  background: var(--az-bg);
+  color: var(--az-text);
+  overflow: auto;
+  overscroll-behavior: contain;
+  box-shadow: 0 32px 120px #00000059;
+  font-family: inherit;
+  line-height: 1.6;
+}
+.az-marketing .lop-dialog::backdrop {
+  background: #050811b3;
+  backdrop-filter: blur(9px);
+}
+.lop-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: 260px minmax(0, 1fr);
+  min-height: 550px;
+}
+.az-marketing .lop-close {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--az-line);
+  border-radius: 50%;
+  background: var(--az-bg);
+  color: var(--az-muted);
+  cursor: pointer;
+}
+.az-marketing .lop-close:hover {
+  color: var(--az-text);
+  border-color: var(--az-blue);
+}
+.lop-close span,
+.lop-close span::after {
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 1.5px;
+  border-radius: 1px;
+  background: currentColor;
+  transform: rotate(45deg);
+}
+.lop-close span::after {
+  content: "";
+  transform: rotate(90deg);
+}
+.lop-art {
+  display: grid;
+  position: relative;
+  place-items: center;
+  min-width: 0;
+  overflow: hidden;
+  border-right: 1px solid var(--az-line);
+  background:
+    radial-gradient(ellipse at 55% 40%, #3869fc20, transparent 64%),
+    var(--az-surface);
+}
+.lop-art-orbit {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  border: 1px solid #3869fc1f;
+  border-radius: 50%;
+}
+.lop-art-orbit::before,
+.lop-art-orbit::after {
+  position: absolute;
+  content: "";
+  inset: 34px;
+  border: inherit;
+  border-radius: inherit;
+}
+.lop-art-orbit::after {
+  inset: -34px;
+}
+.lop-content {
+  padding: 52px 36px 32px;
+  min-width: 0;
+}
+.az-marketing .lop-kicker {
+  margin-bottom: 16px;
+  padding-right: 20px;
+  color: var(--az-blue);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+.az-marketing .lop-content h2 {
+  max-width: 420px;
+  font-size: clamp(30px, 3.5vw, 40px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+}
+.az-marketing .lop-description {
+  margin-top: 16px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--az-muted);
+}
+.lop-commercial {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 24px;
+  margin-block: 26px;
+  padding-block: 22px;
+  border-block: 1px solid var(--az-line);
+}
+.lop-price,
+.lop-revenue-share {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lop-price > strong {
+  font-size: 56px;
+  line-height: 0.95;
+  font-weight: 600;
+  letter-spacing: -0.06em;
+}
+.lop-price > span,
+.lop-revenue-share > span {
+  font-size: 12px;
+  line-height: 1.4;
+}
+.lop-price small,
+.lop-revenue-share small {
+  display: block;
+  max-width: 110px;
+  margin-top: 4px;
+  color: var(--az-muted);
+  font-size: 10px;
+  line-height: 1.5;
+}
+.lop-revenue-share > strong {
+  font-size: 29px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+.lop-availability > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+.lop-availability strong {
+  font-size: 13px;
+  font-weight: 600;
+}
+.lop-availability span {
+  color: var(--az-muted);
+  font-size: 11px;
+}
+.lop-availability progress {
+  display: block;
+  appearance: none;
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--az-raised);
+}
+.lop-availability progress::-webkit-progress-bar {
+  background: var(--az-raised);
+}
+.lop-availability progress::-webkit-progress-value {
+  background: #3869fc;
+  border-radius: 5px;
+}
+.lop-availability progress::-moz-progress-bar {
+  background: #3869fc;
+  border-radius: 5px;
+}
+.lop-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 26px;
+}
+.az-marketing .lop-actions .az-button,
+.az-marketing .lop-secondary {
+  min-height: 48px;
+  padding: 10px 16px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.az-marketing .lop-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--az-line);
+  border-radius: 999px;
+  color: var(--az-text);
+  background: transparent;
+  text-decoration: none;
+  font-weight: 600;
+  transition:
+    background 160ms,
+    border-color 160ms;
+}
+.az-marketing .lop-secondary:hover {
+  background: var(--az-surface);
+  border-color: var(--az-blue);
+}
+.az-marketing .lop-terms {
+  margin-top: 18px;
+  color: var(--az-muted);
+  font-size: 10px;
+  line-height: 1.65;
+}
+.az-marketing .lop-terms a {
+  color: var(--az-text);
+  text-underline-offset: 3px;
+}
+@media (max-width: 700px) {
+  .az-marketing .lop-dialog {
+    width: min(480px, calc(100% - 24px));
+    max-height: calc(100dvh - 24px);
+    border-radius: 22px;
+  }
+  .lop-inner {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+  }
+  .lop-art {
+    height: 136px;
+    border-right: 0;
+    border-bottom: 1px solid var(--az-line);
+  }
+  .lop-art-orbit {
+    width: 200px;
+    height: 200px;
+  }
+  .lop-content {
+    padding: 26px 24px 24px;
+  }
+  .az-marketing .lop-kicker {
+    padding-right: 0;
+    margin-bottom: 12px;
+  }
+  .lop-commercial {
+    margin-block: 22px;
+    padding-block: 20px;
+  }
+  .lop-actions {
+    gap: 8px;
+  }
+  .az-marketing .lop-trigger {
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    min-height: 44px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 360px) {
+  .lop-content {
+    padding-inline: 20px;
+  }
+  .lop-art {
+    height: 110px;
+  }
+  .lop-price > strong {
+    font-size: 48px;
+  }
+  .lop-actions {
+    grid-template-columns: 1fr;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .az-marketing :is(.lop-trigger, .lop-secondary) {
+    transition: none;
+  }
+}

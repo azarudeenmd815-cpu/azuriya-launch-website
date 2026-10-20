@@ -4,19 +4,21 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUpRight,
+  CheckCircle,
+  Hash,
+  Triangle,
+} from "@phosphor-icons/react/dist/ssr";
+import {
   ArrowsLeftRight,
   Bank,
-  ChatCircleText,
-  CheckCircle,
+  ChatCircleDots as ChatCircleText,
   CreditCard,
-  Hash,
   LockKey,
   SlidersHorizontal,
-  Triangle,
   UserCircle,
   UsersThree,
   Wallet,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
 import { FlowTracks } from "./flow-tracks";
 import "./operations-graphics.css";
 

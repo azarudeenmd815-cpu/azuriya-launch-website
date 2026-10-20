@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("challenge stages use their own target and funded stage shows a payout cycle instead of qualification", async ({
   page,

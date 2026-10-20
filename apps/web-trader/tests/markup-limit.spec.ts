@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("the maximum $5 extra markup keeps the $2 base and displays a $7 total", async ({
   page,

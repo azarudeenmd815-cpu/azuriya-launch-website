@@ -1,13 +1,15 @@
+import {
+  FileText,
+  PlugsConnected,
+  ShieldCheck,
+  SlidersHorizontal,
+} from "./three-d-icon";
 import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
   Check,
   CheckCircle,
-  FileText,
-  PlugsConnected,
-  ShieldCheck,
-  SlidersHorizontal,
 } from "@phosphor-icons/react/dist/ssr";
 import { MarketingNavigation } from "./navigation";
 import { MarketingSurface } from "./marketing-theme";
@@ -64,12 +66,9 @@ function CommercialPanel({ prop }: { prop: boolean }) {
       </dl>
       <div className="dp-slot-note">
         <strong>
-          {launchOffer.allocatedSlots} / {launchOffer.totalSlots}
+          {launchOffer.remainingSlots} / {launchOffer.totalSlots}
         </strong>
-        <span>
-          launch slots allocated ·{" "}
-          {launchOffer.totalSlots - launchOffer.allocatedSlots} remaining
-        </span>
+        <span>launch slots remaining</span>
       </div>
       <Link href={launchOffer.termsHref}>
         Read the offer terms <ArrowUpRight size={15} />

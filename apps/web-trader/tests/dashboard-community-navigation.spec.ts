@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("team permission drafts stay isolated and resources open their channel context", async ({
   page,

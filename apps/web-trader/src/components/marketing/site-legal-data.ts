@@ -181,7 +181,7 @@ export const legalPages: SitePage[] = [
           "The standard Azuriya package is offered with a $0 fixed monthly subscription and a 35% share of eligible business revenue. The written service agreement defines the included modules, configuration, reporting and settlement schedule before activation.",
           "The agreement must define eligible revenue, its currency and reporting period, treatment of refunds, taxes and adjustments, and the settlement process. Trader deposits and account balances are not themselves business revenue. The website's $10,000 example divides eligible revenue into $3,500 for Azuriya and $6,500 for the business before other agreed costs; it does not guarantee revenue.",
           "Third-party trading-platform licences, liquidity and payment-provider charges are separate from the $0 Azuriya subscription. Custom development, additional services and changes outside the standard package require an agreed scope.",
-          "The release is limited to 100 launch slots. The published allocation is 97 of 100, leaving 3 slots. Eligibility, a signed service agreement and deployment readiness are required. Sending an enquiry does not reserve a slot, and the allocation is updated when the operator confirms a change.",
+          "The release is limited to 100 launch slots, with 97 slots remaining. Eligibility, a signed service agreement and deployment readiness are required. Sending an enquiry does not reserve a slot, and availability is updated when the operator confirms a change.",
           "Service availability, operating permissions, support, termination, data export and ongoing responsibilities are defined in the final service agreement. The current website and terminal remain a simulated or illustrative preview until a configured deployment is activated.",
         ],
         links: [{ label: "Pricing & offer scope", href: "/pricing" }],
@@ -351,6 +351,7 @@ export const legalPages: SitePage[] = [
           "The first-visit language and cookie dialog stores the selected language in local storage as azuriya:language. It stores the cookie choice in local storage as azuriya:site-consent and in the first-party azuriya_site_consent cookie for up to one year. The consent cookie is SameSite=Lax and does not contain account or trading data.",
           "Essential storage is always enabled. You can allow optional analytics cookies or choose essential only. Optional analytics and advertising scripts are not currently loaded by this preview, so accepting the optional category records your choice but does not activate a tracker. The footer lets you reopen these settings.",
           "If the consent dialog is dismissed without saving, a session-only browser entry prevents it from reopening during that browser session. It does not set consent or enable optional storage.",
+          "The launch-offer popup uses the session-only entry azuriya:launch-offer-seen to avoid repeating the automatic offer during the same browser session. It stores a display preference, contains no personal or account data and does not enable analytics. The Launch offer button lets you reopen it.",
         ],
       },
       {

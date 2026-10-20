@@ -961,7 +961,7 @@ export const productPages: SitePage[] = [
         title: "$0 per month with a 35% revenue share.",
         paragraphs: [
           "The standard Azuriya package has a $0 fixed monthly subscription and a 35% share of eligible revenue. External platform licences, provider charges and custom services are scoped separately.",
-          "Your agreement defines eligible revenue, reporting, refunds, taxes and settlement. The launch allocation is 97 of 100 slots, with 3 remaining; onboarding is subject to eligibility and readiness.",
+          "Your agreement defines eligible revenue, reporting, refunds, taxes and settlement. There are 97 of 100 launch slots remaining; onboarding is subject to eligibility and readiness.",
         ],
       },
       {

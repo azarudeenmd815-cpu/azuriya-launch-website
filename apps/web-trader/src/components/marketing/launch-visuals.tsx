@@ -12,7 +12,7 @@ import {
   SquaresFour,
   Trophy,
   Users,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
 import { FlowTracks } from "./flow-tracks";
 import { DiagramMotionToggle } from "./marketing-motion";
 import "./launch-visuals.css";

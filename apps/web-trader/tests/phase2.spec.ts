@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 import { randomUUID } from "node:crypto";
 
 test("Phase 2 charts, saved workspaces, risk entry, management and responsive resync", async ({

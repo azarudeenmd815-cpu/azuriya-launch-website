@@ -2,9 +2,9 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
-  BookOpen,
   Clock,
 } from "@phosphor-icons/react/dist/ssr";
+import { BookOpen } from "./three-d-icon";
 import { ArticleLibrary } from "./article-library";
 import { ArticleGraphic } from "./article-graphic";
 import {

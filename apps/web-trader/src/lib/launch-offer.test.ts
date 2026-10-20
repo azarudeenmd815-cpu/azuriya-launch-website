@@ -11,7 +11,11 @@ describe("published launch offer", () => {
   it("keeps the recurring fee and revenue share together", () => {
     expect(launchOffer.monthlyFee).toBe("0.00");
     expect(launchOffer.revenueSharePercent).toBe(35);
-    expect(launchOffer.totalSlots - launchOffer.allocatedSlots).toBe(3);
+    expect(launchOffer.remainingSlots).toBe(97);
+    expect(launchOffer.allocatedSlots).toBe(3);
+    expect(launchOffer.remainingSlots + launchOffer.allocatedSlots).toBe(
+      launchOffer.totalSlots,
+    );
   });
 
   it("tallies the referenced platform and CRM subscriptions exactly", () => {

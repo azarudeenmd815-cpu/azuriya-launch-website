@@ -1,10 +1,6 @@
 import Link from "next/link";
-import {
-  ArrowRight,
-  ArrowUpRight,
-  GlobeHemisphereWest,
-  ShieldCheck,
-} from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
+import { GlobeHemisphereWest, ShieldCheck } from "./three-d-icon";
 import { FooterBrand } from "./footer-brand-mark";
 import { FooterAccess } from "./footer-access";
 import { SitePreferences } from "./site-preferences";

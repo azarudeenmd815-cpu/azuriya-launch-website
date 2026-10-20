@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ecosystemCount } from "@/lib/ecosystem-catalog";
+import { ArrowUpRight, Triangle } from "@phosphor-icons/react/dist/ssr";
 import {
-  ArrowUpRight,
   ChatCircleDots,
-  CurrencyCircleDollar,
+  Coins as CurrencyCircleDollar,
   PlugsConnected,
   ShieldCheck,
-  Triangle,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
 import platformSources from "../../../public/marketing/platforms/sources.json";
 import "./trading-platforms.css";
 import { FlowTracks } from "./flow-tracks";

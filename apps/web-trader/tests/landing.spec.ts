@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("desktop navigation reaches integrations and the platform CTA opens the preview", async ({
   page,

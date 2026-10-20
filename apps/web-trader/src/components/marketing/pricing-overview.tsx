@@ -1,13 +1,15 @@
-import Link from "next/link";
 import {
-  ArrowRight,
-  ArrowUpRight,
   Bank,
-  Check,
   ChartLineUp,
   PlugsConnected,
   Trophy,
   UsersThree,
+} from "./three-d-icon";
+import Link from "next/link";
+import {
+  ArrowRight,
+  ArrowUpRight,
+  Check,
 } from "@phosphor-icons/react/dist/ssr";
 import { formatOfferMoney, launchOffer } from "@/lib/launch-offer";
 import "./pricing-overview.css";
@@ -81,7 +83,7 @@ const responsibilities = [
 ];
 
 export function PricingOverview() {
-  const remaining = launchOffer.totalSlots - launchOffer.allocatedSlots;
+  const remaining = launchOffer.remainingSlots;
   return (
     <div className="az-container po-content">
       <nav className="po-breadcrumb" aria-label="Breadcrumb">
@@ -128,15 +130,15 @@ export function PricingOverview() {
           </div>
           <div className="po-allocation">
             <div>
-              <span>Launch allocation</span>
+              <span>Launch slots remaining</span>
               <strong>
-                {launchOffer.allocatedSlots} / {launchOffer.totalSlots}
+                {launchOffer.remainingSlots} / {launchOffer.totalSlots}
               </strong>
             </div>
             <progress
-              value={launchOffer.allocatedSlots}
+              value={launchOffer.remainingSlots}
               max={launchOffer.totalSlots}
-              aria-label={`${launchOffer.allocatedSlots} of ${launchOffer.totalSlots} launch slots allocated`}
+              aria-label={`${launchOffer.remainingSlots} of ${launchOffer.totalSlots} launch slots remaining`}
             />
             <p>
               {remaining} slots remaining. Onboarding is subject to eligibility

@@ -1,8 +1,12 @@
+const totalLaunchSlots = 100;
+const remainingLaunchSlots = 97;
+
 export const launchOffer = {
   monthlyFee: "0.00",
   revenueSharePercent: 35,
-  allocatedSlots: 97,
-  totalSlots: 100,
+  remainingSlots: remainingLaunchSlots,
+  allocatedSlots: totalLaunchSlots - remainingLaunchSlots,
+  totalSlots: totalLaunchSlots,
   termsHref: "/legal/terms#launch-offer",
 } as const;
 

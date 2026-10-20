@@ -6,17 +6,19 @@ import {
   ArrowUpRight,
   Check,
   CheckCircle,
-  CreditCard,
   DeviceMobile,
-  GlobeHemisphereWest,
-  LockKey,
   Monitor,
   Plus,
+} from "@phosphor-icons/react/dist/ssr";
+import {
+  CreditCard,
+  GlobeHemisphereWest,
+  LockKey,
   ShieldCheck,
   SlidersHorizontal,
   UsersThree,
   Wallet,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
 import { SiteFooter } from "./site-footer";
 import { MarketingNavigation } from "./navigation";
 import { FundingWalkthrough } from "./funding-walkthrough";

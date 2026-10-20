@@ -1,7 +1,7 @@
+import { CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import {
   ArrowsSplit,
   Bank,
-  CheckCircle,
   ChatCircleDots,
   Database,
   GlobeHemisphereWest,
@@ -12,7 +12,7 @@ import {
   Trophy,
   UsersThree,
   Wallet,
-} from "@phosphor-icons/react/dist/ssr";
+} from "./three-d-icon";
 import { MarketingBrand } from "./brand";
 import { CommissionGraphic, RiskUsageGraphic } from "./product-detail-graphics";
 import type { SiteVisual } from "./site-types";

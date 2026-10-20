@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("every routing track moves, global pause freezes the whole network, and resume continues it", async ({
   page,

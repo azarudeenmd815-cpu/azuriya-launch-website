@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("dashboard funding filters match transactions and MT5 deposits has its own page", async ({
   page,

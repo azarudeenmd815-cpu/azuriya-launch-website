@@ -2,12 +2,10 @@ import Link from "next/link";
 import {
   ArrowRight,
   ArrowUpRight,
-  BookOpen,
   Check,
   Clock,
-  FileText,
-  ShieldCheck,
 } from "@phosphor-icons/react/dist/ssr";
+import { BookOpen, FileText, ShieldCheck } from "./three-d-icon";
 import { MarketingNavigation } from "./navigation";
 import { SiteFooter } from "./site-footer";
 import { SiteProductGraphic } from "./site-product-graphic";

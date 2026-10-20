@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { ArrowUpRight } from "@phosphor-icons/react";
 import {
-  ArrowUpRight,
-  ArrowsHorizontal,
+  ArrowsLeftRight as ArrowsHorizontal,
   Coins,
   GlobeHemisphereWest,
   Lightning,
-} from "@phosphor-icons/react";
+} from "./three-d-icon";
 import { localizedUi } from "@/lib/site-language";
 import { useSiteLanguage } from "@/lib/site-language-client";
 import "./trading-conditions.css";

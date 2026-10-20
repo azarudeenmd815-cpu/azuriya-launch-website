@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("first visit suggests Portuguese by country and saves language and cookie choices", async ({
   page,

@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("logo rows move continuously and pause without duplicating accessible links", async ({
   page,

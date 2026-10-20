@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./fixtures";
 
 test("journal trade filters, search, expansion and empty state keep summary scoped to the full period", async ({
   page,
